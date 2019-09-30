@@ -59,43 +59,74 @@ class FoodScreenMainFragment : Fragment(),View.OnClickListener{
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val bundle = Bundle()
         american_food.setOnClickListener {
-            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest)
+            bundle.putString("style", "American")
+            bundle.putString("jump", "FoodScreen")
+
+            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest,bundle)
         }
 
         chinese_food.setOnClickListener {
-            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest)
+            bundle.putString("style", "Chinese")
+            bundle.putString("jump", "FoodScreen")
+
+            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest,bundle)
         }
 
         dessert_food.setOnClickListener {
-            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest)
+            bundle.putString("style", "Dessert")
+            bundle.putString("jump", "FoodScreen")
+
+            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest,bundle)
         }
 
         fast_food_food.setOnClickListener {
-            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest)
+            bundle.putString("style", "Fast Food")
+            bundle.putString("jump", "FoodScreen")
+
+            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest,bundle)
         }
 
         french_food.setOnClickListener {
-            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest)
+            bundle.putString("style", "French")
+            bundle.putString("jump", "FoodScreen")
+
+            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest,bundle)
         }
 
         italian_food.setOnClickListener {
-            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest)
+            bundle.putString("style", "Italian")
+            bundle.putString("jump", "FoodScreen")
+
+            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest,bundle)
         }
 
         japanese_food.setOnClickListener {
-            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest)
+            bundle.putString("style", "Japanese")
+            bundle.putString("jump", "FoodScreen")
+
+            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest,bundle)
         }
 
         mexican_food.setOnClickListener {
-            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest)
+            bundle.putString("style", "Mexican")
+            bundle.putString("jump", "FoodScreen")
+
+            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest,bundle)
         }
 
         pizza_food.setOnClickListener {
-            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest)
+            bundle.putString("style", "Pizza")
+            bundle.putString("jump", "FoodScreen")
+
+            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest,bundle)
         }
         steakhouse_food.setOnClickListener {
-            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest)
+            bundle.putString("style", "Steakhouse")
+            bundle.putString("jump", "FoodScreen")
+
+            findNavController().navigate(R.id.action_foodScreenMainFragment_to_listRest,bundle)
         }
     }
 

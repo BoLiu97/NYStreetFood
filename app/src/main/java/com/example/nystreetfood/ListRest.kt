@@ -36,6 +36,7 @@ class ListRest : Fragment() {
         var myFragmentView = inflater.inflate(R.layout.fragment_list_rest, container, false)
         var recyclerView = myFragmentView.findViewById(R.id.rest_list_recyclerView) as RecyclerView
         val restData = readRestData()
+
         recyclerView!!.layoutManager = LinearLayoutManager(this.context)
         recyclerView!!.adapter= RecyclerViewAdapter(restData)
 
@@ -61,29 +62,84 @@ class ListRest : Fragment() {
             val initialRest = resources.openRawResource(R.raw.times_square_food_beverage_locations)
             val reader = initialRest.bufferedReader()
             var line = reader.readLine()
+            var styleChoose = arguments?.getString("style").toString()
+            //var subin = arguments?.getString("subindu").toString()
+            var jumpClass = arguments?.getString("jump").toString()
 
+            if (jumpClass == "FoodScreen"){
+                while (line != null) {
+                    var Line = line.toString()
+                    //val nextLine = Line.split(",").toTypedArray()
+                    val nextLine: List<String> = Line.split(",")
+                    //print(  nextLine)
+                    if (styleChoose == nextLine.elementAt(2)) {
+                        listOfRest.add(
+                            Rest(
+                                nextLine.elementAt(0),
+                                nextLine.elementAt(1),
+                                nextLine.elementAt(2),
+                                nextLine.elementAt(3),
+                                nextLine.elementAt(4),
+                                nextLine.elementAt(5),
+                                nextLine.elementAt(6),
+                                0
 
-            while (line != null) {
-                var Line = line.toString()
-                //val nextLine = Line.split(",").toTypedArray()
-                val nextLine: List<String> = Line.split(",")
-                //print(  nextLine)
+                            )
+                        )
+                    }
+                    line = reader.readLine()
+                }
 
-                listOfRest.add(
-                    Rest(
-                        nextLine.elementAt(0),
-                        nextLine.elementAt(1),
-                        nextLine.elementAt(2),
-                        nextLine.elementAt(3),
-                        nextLine.elementAt(4),
-                        nextLine.elementAt(5),
-                        nextLine.elementAt(6),
-                        0
+        }else if(jumpClass=="StyleScreen"){
+                while (line != null) {
+                    var Line = line.toString()
+                    //val nextLine = Line.split(",").toTypedArray()
+                    val nextLine: List<String> = Line.split(",")
+                    //print(  nextLine)
 
+                    if (styleChoose == nextLine.elementAt(1)) {
+                        listOfRest.add(
+                            Rest(
+                                nextLine.elementAt(0),
+                                nextLine.elementAt(1),
+                                nextLine.elementAt(2),
+                                nextLine.elementAt(3),
+                                nextLine.elementAt(4),
+                                nextLine.elementAt(5),
+                                nextLine.elementAt(6),
+                                0
+
+                            )
+                        )
+                    }
+
+                    line = reader.readLine()
+                }
+            }else {
+                while (line != null) {
+                    var Line = line.toString()
+                    //val nextLine = Line.split(",").toTypedArray()
+                    val nextLine: List<String> = Line.split(",")
+                    //print(  nextLine)
+
+                    listOfRest.add(
+                        Rest(
+                            nextLine.elementAt(0),
+                            nextLine.elementAt(1),
+                            nextLine.elementAt(2),
+                            nextLine.elementAt(3),
+                            nextLine.elementAt(4),
+                            nextLine.elementAt(5),
+                            nextLine.elementAt(6),
+                            0
+
+                        )
                     )
-                )
-                line = reader.readLine()
+
+                    line = reader.readLine()
+                }
             }
+            arguments?.putString("jump", "")
         } catch (e: IllegalStateException) {
             return listOfRest
         }

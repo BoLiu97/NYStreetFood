@@ -12,7 +12,7 @@ import android.widget.CheckBox
 import kotlinx.android.synthetic.main.fragment_style_list_main.*
 import kotlinx.android.synthetic.main.fragment_style_lists.view.*
 import android.widget.GridView
-
+import androidx.navigation.fragment.findNavController
 
 
 /**
@@ -33,12 +33,15 @@ class StyleListMainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var myFragmentView =  inflater.inflate(R.layout.fragment_style_list_main, container, false)
-        var gridView = myFragmentView.findViewById(R.id.gvListStyle) as GridView
-        gridView.setAdapter(StyleAdapter(listOfStyles))
+        return inflater.inflate(R.layout.fragment_style_list_main, container, false)
 
-        return myFragmentView
+        //gridView.setAdapter(StyleAdapter(listOfStyles))
+
+
+
+
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,21 +75,33 @@ class StyleListMainFragment : Fragment() {
         )
         //gvListStyle.adapter=StyleAdapter(listOfStyles)
     }
-    class StyleAdapter(val listOfStyle:ArrayList<Style>):
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val bundle = Bundle()
+        gvListStyle.adapter = StyleAdapter(listOfStyles){
+
+            bundle.putString("jump", "StyleScreen")
+            bundle.putString("style",it)
+            findNavController().navigate(R.id.action_styleListMainFragment_to_listRest,bundle)
+        }
+
+    }
+    class StyleAdapter(val listOfStyle:ArrayList<Style>,val click: (String)->Unit):
         BaseAdapter() {
         //,val click: (String)->Unit
 
-        override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
+        override fun getView(p0: Int, p1: View?, p2: ViewGroup? ): View {
             val style = this.listOfStyle[p0]
             var styleView =
                 LayoutInflater.from(p2?.context).inflate(R.layout.fragment_style_lists, p2, false)
             styleView.IV_style.setImageResource(style.Image!!)
-            styleView.idItem.setText(style.Name)
+            styleView.idItem.text=style.Name
+            styleView.IV_style.setOnClickListener {
+               click(style.Name!!)
+            }
             //styleView.idItem.text = style.Name!!
             /*
-            foodView.ivFoodImg.setOnClickListener {
-                click(food.des)
-            }
+
             */
             return styleView
 
