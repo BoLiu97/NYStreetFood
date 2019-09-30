@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_food_screen.*
 import kotlinx.android.synthetic.main.fragment_food_screen_main.*
 import kotlinx.android.synthetic.main.fragment_food_screen_main.american_food
@@ -59,6 +60,7 @@ class FoodScreenMainFragment : Fragment(),View.OnClickListener{
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        (activity as AppCompatActivity).toolbar.title = "Food List"
         val bundle = Bundle()
         american_food.setOnClickListener {
             bundle.putString("style", "American")

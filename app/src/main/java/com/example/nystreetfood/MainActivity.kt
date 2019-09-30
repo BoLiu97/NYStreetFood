@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
         val navController=findNavController(R.id.nav_host_frag)
         toolbar.setupWithNavController(navController)
+        toolbar.title = "Home"
+
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu, menu)

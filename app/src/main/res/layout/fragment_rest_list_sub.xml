@@ -22,7 +22,7 @@
             android:layout_margin="5dp"
             android:textStyle="bold"
             android:text="Main Text"
-            android:textSize="25sp" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/sub"

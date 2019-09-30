@@ -12,12 +12,14 @@ import android.view.ViewGroup
 import android.widget.GridView
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.opencsv.CSVReader
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_list_rest.*
 import kotlinx.android.synthetic.main.fragment_rest_list_sub.view.*
 import kotlinx.android.synthetic.main.fragment_saved_rest_main.*
@@ -51,6 +53,7 @@ class ListRest : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity).toolbar.title = "Restaurant List"
         val restData = readRestData()
 
         val bundle = Bundle()
@@ -145,9 +148,10 @@ class ListRest : Fragment() {
 
                     line = reader.readLine()
                 }
-            }else {
+            }else {line = reader.readLine()
                 while (line != null) {
                     var Line = line.toString()
+
                     //val nextLine = Line.split(",").toTypedArray()
                     val nextLine: List<String> = Line.split(",")
                     //print(  nextLine)

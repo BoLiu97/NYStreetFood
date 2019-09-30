@@ -12,7 +12,9 @@ import android.widget.CheckBox
 import kotlinx.android.synthetic.main.fragment_style_list_main.*
 import kotlinx.android.synthetic.main.fragment_style_lists.view.*
 import android.widget.GridView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 /**
@@ -77,6 +79,8 @@ class StyleListMainFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity).toolbar.title = "Style List"
+
         val bundle = Bundle()
         gvListStyle.adapter = StyleAdapter(listOfStyles){
 

@@ -17,9 +17,12 @@ import android.R.attr.button
 import android.content.pm.PackageManager
 import android.provider.SyncStateContract
 import android.widget.RatingBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.view.isGone
 import androidx.core.view.isInvisible
+import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.StringBuilder
 import java.util.jar.Manifest as Manifest1
 
 
@@ -37,6 +40,8 @@ class DetailRestFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity).toolbar.title = "Restaurant Detail"
+
         val life = arguments?.getString("rest_name")
         view.findViewById<TextView>(R.id.TV_name).text=
             arguments?.getString("rest_name")
@@ -65,9 +70,18 @@ class DetailRestFragment : Fragment() {
         }else {
             view.findViewById<Button>(R.id.bt_website).text =
                 ("Website")
+
+            val websiteNM = arguments?.getString("rest_web")
+
+            val websiteAU ="http://"
+            var sv =StringBuilder()
+            if(websiteNM?.contains(websiteAU)?: false){
+                sv.append(websiteAU).append(websiteNM)
+            }
+            val websitell = sv.toString()
             bt_website.setOnClickListener {
                 val openURL =
-                    Intent(Intent.ACTION_VIEW, Uri.parse(arguments?.getString("rest_web")))
+                    Intent(Intent.ACTION_VIEW, Uri.parse(websitell))
                 startActivity(openURL)
             }
 
