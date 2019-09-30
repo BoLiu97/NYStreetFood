@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.opencsv.CSVReader
 import kotlinx.android.synthetic.main.fragment_list_rest.*
 import kotlinx.android.synthetic.main.fragment_rest_list_sub.view.*
+import kotlinx.android.synthetic.main.fragment_saved_rest_main.*
 import java.io.FileReader
 import java.io.IOException
 
@@ -33,19 +34,34 @@ class ListRest : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var myFragmentView = inflater.inflate(R.layout.fragment_list_rest, container, false)
+        return inflater.inflate(R.layout.fragment_list_rest, container, false)
+        /*
         var recyclerView = myFragmentView.findViewById(R.id.rest_list_recyclerView) as RecyclerView
-        val restData = readRestData()
 
+        val restData = readRestData()
         recyclerView!!.layoutManager = LinearLayoutManager(this.context)
         recyclerView!!.adapter= RecyclerViewAdapter(restData)
 
 
         return myFragmentView
+
+         */
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val restData = readRestData()
+
+        val bundle = Bundle()
+        view.findViewById<RecyclerView>(R.id.rest_list_recyclerView)
+            .layoutManager = LinearLayoutManager(context)
+
+        view.findViewById<RecyclerView>(R.id.rest_list_recyclerView)
+            .adapter = RecyclerViewAdapter(restData){
+            bundle.putString("Name",it.restName)
+            findNavController().navigate(R.id.action_listRest_to_detailRestFragment,bundle)
+        }
     }
 
 
@@ -56,8 +72,7 @@ class ListRest : Fragment() {
     fun readRestData():ArrayList<Rest> {
         var listOfRest = ArrayList<Rest>()
         try {
-            //val reader = CSVReader(FileReader("times_square_food_beverage_locations.csv"))
-            //var nextLine: Array<String>? = null
+
 
             val initialRest = resources.openRawResource(R.raw.times_square_food_beverage_locations)
             val reader = initialRest.bufferedReader()
@@ -149,14 +164,14 @@ class ListRest : Fragment() {
 
     class RecyclerViewAdapter(
 
-        val restData: ArrayList<Rest>
-
-    ) ://Adapter class
-    //
+        val restData: ArrayList<Rest>,
+        val clickListener: (Rest) -> Unit
+    ) :
         RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder>() {//Inherit RecyclerView.Adapter. The Adapter holds a list of RecyclerViewHolder
 
         //In this method, inflate xml into a View object
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
+                RecyclerViewHolder {
             val viewItem =
                 LayoutInflater.from(parent?.context)
                     .inflate(R.layout.fragment_rest_list_sub, parent, false)
@@ -169,8 +184,10 @@ class ListRest : Fragment() {
         }
 
         //What happens when the items are added to the list
-        override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
-            //holder.bind(restData.get(position),clickListener)
+        override fun onBindViewHolder(holder:
+                                      RecyclerViewHolder, position: Int) {
+            holder.bind(restData.get(position),clickListener)
+            /*
             val restTitle = restData.get(position)
             holder?.viewItem?.idItem?.text = restTitle.restName
             holder?.viewItem?.sub?.text = restTitle.subSub
@@ -186,23 +203,12 @@ class ListRest : Fragment() {
                     else -> R.mipmap.food
                 }
             )
+            */
         }
-
-
         //The class to hold the items
         class RecyclerViewHolder(val viewItem: View) :
             RecyclerView.ViewHolder(viewItem) {
-            init {
-                viewItem.setOnClickListener {
 
-                //val intent = Intent(viewItem.context, DetailRestFragment::class.java)
-                    //viewItem.context.startActivity(intent)
-
-                }
-            }
-
-
-            /*
             fun bind(rest: Rest, clickListener: (Rest) -> Unit) {
                 viewItem.findViewById<ImageView>(R.id.IV_style)
                     .setImageResource(
@@ -222,8 +228,17 @@ class ListRest : Fragment() {
                 viewItem.setOnClickListener {
                     clickListener(rest)}
             }
+            /*
+                       init {
+                           viewItem.setOnClickListener {
 
-             */
+                           //val intent = Intent(viewItem.context, DetailRestFragment::class.java)
+                               //viewItem.context.startActivity(intent)
+
+                           }
+                       }
+                        */
+
         }
     }
 

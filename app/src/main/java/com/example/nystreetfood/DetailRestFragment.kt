@@ -20,5 +20,48 @@ class DetailRestFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_detail_rest, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
 
+    fun readRestData():ArrayList<Rest> {
+        var listOfRest = ArrayList<Rest>()
+        try {
+
+
+            val initialRest = resources.openRawResource(R.raw.times_square_food_beverage_locations)
+            val reader = initialRest.bufferedReader()
+            var line = reader.readLine()
+
+            //var subin = arguments?.getString("subindu").toString()
+
+
+                while (line != null) {
+                    var Line = line.toString()
+                    //val nextLine = Line.split(",").toTypedArray()
+                    var nameChoose = arguments?.getString("Name").toString()
+                    val nextLine: List<String> = Line.split(",")
+                    //print(  nextLine)
+                    if (nameChoose == "FoodScreen"){
+                    listOfRest.add(
+                        Rest(
+                            nextLine.elementAt(0),
+                            nextLine.elementAt(1),
+                            nextLine.elementAt(2),
+                            nextLine.elementAt(3),
+                            nextLine.elementAt(4),
+                            nextLine.elementAt(5),
+                            nextLine.elementAt(6),
+                            0
+
+                        )
+                    )
+                }
+                    line = reader.readLine()
+                }
+        } catch (e: IllegalStateException) {
+            return listOfRest
+        }
+        return listOfRest
+    }
 }
