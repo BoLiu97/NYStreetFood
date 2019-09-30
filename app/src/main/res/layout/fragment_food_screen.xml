@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/frameLayout"
+    tools:context=".FoodScreenFragment">
+    <Button
+        android:id="@+id/food_name"
+        android:background="@mipmap/food_american"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:textColor="#000"
+        android:text="American" />
+
+    <Button
+        android:id="@+id/american_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="American" />
+
+    <Button
+        android:id="@+id/chinese_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Chinese" />
+
+    <Button
+        android:id="@+id/french_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="French" />
+
+    <Button
+        android:id="@+id/italian_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Italian" />
+
+    <Button
+        android:id="@+id/japanese_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Japanese" />
+
+    <Button
+        android:id="@+id/mexican_food"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Mexican" />
+
+    <Button
+        android:id="@+id/organic_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Organic" />
+    <Button
+        android:id="@+id/pan_asian_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Pan Asian" />
+    <Button
+        android:id="@+id/pizza_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Pizza" />
+    <Button
+        android:id="@+id/russian_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Russian" />
+    <Button
+        android:id="@+id/seafood_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Seafood" />
+    <Button
+        android:id="@+id/spanish_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Spanish" />
+    <Button
+        android:id="@+id/steakhouse_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Steakhouse" />
+    <Button
+        android:id="@+id/thai_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Thai" />
+    <Button
+        android:id="@+id/fast_food_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Fast Food" />
+    <Button
+        android:id="@+id/dessert_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Dessert" />
+</LinearLayout>
