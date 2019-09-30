@@ -1,0 +1,7 @@
+#Sun Sep 29 21:24:32 EDT 2019
+base.0=/Users/bo/Desktop/CS 201/all_project/NYStreetFood/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/Users/bo/Desktop/CS 201/all_project/NYStreetFood/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex
