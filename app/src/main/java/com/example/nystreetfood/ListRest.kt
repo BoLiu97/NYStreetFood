@@ -89,7 +89,7 @@ class ListRest : Fragment() {
         }
         return listOfRest
     }
-/*
+
 
     class RecyclerViewAdapter(
 
@@ -171,6 +171,6 @@ class ListRest : Fragment() {
         }
     }
 
- */
+
 }
 
