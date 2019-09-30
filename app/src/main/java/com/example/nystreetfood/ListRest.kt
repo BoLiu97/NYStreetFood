@@ -57,11 +57,26 @@ class ListRest : Fragment() {
         view.findViewById<RecyclerView>(R.id.rest_list_recyclerView)
             .layoutManager = LinearLayoutManager(context)
 
-        view.findViewById<RecyclerView>(R.id.rest_list_recyclerView)
-            .adapter = RecyclerViewAdapter(restData){
-            bundle.putString("Name",it.restName)
+        rest_list_recyclerView.adapter = RecyclerViewAdapter(restData){
+            bundle.putString("rest_name",it.restName)
+            bundle.putString("rest_subInd",it.subIndus)
+            bundle.putString("rest_subSub",it.subSub)
+            bundle.putString("rest_add",it.address)
+            bundle.putString("rest_phone",it.phone)
+            bundle.putString("rest_web",it.website)
+            bundle.putString("rest_post",it.postcode)
+            bundle.putInt("rest_rate",it.rating!!)
+
+
             findNavController().navigate(R.id.action_listRest_to_detailRestFragment,bundle)
         }
+
+//        view.findViewById<RecyclerView>(R.id.rest_list_recyclerView)
+//            .adapter = RecyclerViewAdapter(restData){
+//            bundle.putString("Name",it.restName)
+//
+//            findNavController().navigate(R.id.action_listRest_to_detailRestFragment,bundle)
+//        }
     }
 
 

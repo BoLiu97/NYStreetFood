@@ -3,6 +3,8 @@
     package="com.example.nystreetfood"
     android:installLocation="preferExternal">
 
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
 
 
     <application

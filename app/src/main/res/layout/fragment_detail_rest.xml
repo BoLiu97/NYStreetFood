@@ -9,83 +9,110 @@
 
     <TextView
         android:id="@+id/TV_name"
-        android:layout_width="211dp"
-        android:layout_height="40dp"
+        android:layout_width="250dp"
+        android:layout_height="68dp"
         android:text="Name"
-        android:textSize="30dp"
+        android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintHorizontal_bias="0.298"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintVertical_bias="0.271" />
 
     <TextView
         android:id="@+id/TV_address"
-        android:layout_width="322dp"
-        android:layout_height="33dp"
+        android:layout_width="343dp"
+        android:layout_height="65dp"
         android:text="Address"
         android:textSize="22dp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintHorizontal_bias="0.705"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.313" />
+        app:layout_constraintVertical_bias="0.537" />
 
     <TextView
         android:id="@+id/TV_style"
-        android:layout_width="171dp"
-        android:layout_height="20dp"
+        android:layout_width="204dp"
+        android:layout_height="49dp"
         android:text="Style is unavilable"
         android:textSize="15dp"
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.179"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274" />
-
-    <ImageView
-        android:id="@+id/FV_food"
-        android:layout_width="249dp"
-        android:layout_height="66dp"
-        android:src="@mipmap/food_pizza"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.306"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081" />
-
-    <RatingBar
-        android:id="@+id/rating"
-        style="?android:attr/ratingBarStyleSmall"
-        android:layout_width="82dp"
-        android:layout_height="18dp"
-        android:isIndicator="true"
-        android:numStars="5"
-        android:stepSize="0.1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.245" />
-
-    <TextView
-        android:id="@+id/TV_Info"
-        android:layout_width="69dp"
-        android:layout_height="40dp"
-        android:text="INFO"
-        android:textSize="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintHorizontal_bias="0.231"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.451" />
+
+    <ImageView
+        android:id="@+id/FV_food"
+        android:layout_width="583dp"
+        android:layout_height="128dp"
+        android:src="@mipmap/food_pizza"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <TextView
+        android:id="@+id/TV_Info"
+        android:layout_width="200dp"
+        android:layout_height="49dp"
+        android:text="Contact Info:"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.708" />
+
+    <TextView
+        android:id="@+id/Postcode"
+        android:layout_width="106dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="320dp"
+        android:text="Posecode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.934"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_website"
+        android:layout_width="281dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="532dp"
+        android:text="Website"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_phone"
+        android:layout_width="280dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="620dp"
+        android:text="PhoneNum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RatingBar
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="248dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

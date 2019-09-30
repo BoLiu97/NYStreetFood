@@ -1059,6 +1059,7 @@ id FV_food
 id IV_style
 id LKdraw
 id META
+id Postcode
 id SHIFT
 id SYM
 id TV_Info
@@ -1146,6 +1147,8 @@ id barrier
 id beginning
 id blocking
 id bottom
+id bt_phone
+id bt_website
 id buttonPanel
 id cancel_action
 id center

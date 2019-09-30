@@ -63,7 +63,29 @@
         android:id="@+id/detailRestFragment"
         android:name="com.example.nystreetfood.DetailRestFragment"
         android:label="fragment_detail_rest"
-        tools:layout="@layout/fragment_detail_rest" />
+        tools:layout="@layout/fragment_detail_rest" >
+        <argument
+            android:name="rest_name"
+            app:argType="string" />
+        <argument
+            android:name="rest_subInd"
+            app:argType="string" />
+        <argument
+            android:name="rest_subSub"
+            app:argType="string" />
+        <argument
+            android:name="rest_add"
+            app:argType="string" />
+        <argument
+            android:name="rest_phone"
+            app:argType="string" />
+        <argument
+            android:name="rest_web"
+            app:argType="string" />
+        <argument
+            android:name="rest_rate"
+            app:argType="integer" />
+    </fragment>
 
     <action
         android:id="@+id/action_global_savedRestMainFragment"
