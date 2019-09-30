@@ -15,7 +15,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.nystreetfood.Rest.Companion.readRestData
+//import com.example.nystreetfood.Rest.Companion.readRestData
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
 
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //readRestData()
+        readRestData()
         setSupportActionBar(findViewById(R.id.toolbar))
         val navController=findNavController(R.id.nav_host_frag)
         toolbar.setupWithNavController(navController)
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
 
     }
-    /*
+
     var listOfRest = ArrayList<Rest>()
     fun readRestData(){
         try {
@@ -73,5 +73,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-     */
+
 }

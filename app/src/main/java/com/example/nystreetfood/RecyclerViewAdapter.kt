@@ -1,95 +1,11 @@
 package com.example.nystreetfood
 
-
-import java.nio.file.Paths
-import java.nio.file.Files
-import android.content.Intent
-import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridView
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.findNavController
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.opencsv.CSVReader
-import kotlinx.android.synthetic.main.fragment_list_rest.*
 import kotlinx.android.synthetic.main.fragment_rest_list_sub.view.*
-import java.io.FileReader
-import java.io.IOException
 
-/**
- * A simple [Fragment] subclass.
- */
-class ListRest : Fragment() {
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        var myFragmentView = inflater.inflate(R.layout.fragment_list_rest, container, false)
-        var recyclerView = myFragmentView.findViewById(R.id.rest_list_recyclerView) as RecyclerView
-        val restData = readRestData()
-        recyclerView!!.layoutManager = LinearLayoutManager(this.context)
-        recyclerView!!.adapter= RecyclerViewAdapter(restData)
-
-
-        return myFragmentView
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-    }
-
-
-
-
-
-
-    fun readRestData():ArrayList<Rest> {
-        var listOfRest = ArrayList<Rest>()
-        try {
-            //val reader = CSVReader(FileReader("times_square_food_beverage_locations.csv"))
-            //var nextLine: Array<String>? = null
-
-            val initialRest = resources.openRawResource(R.raw.times_square_food_beverage_locations)
-            val reader = initialRest.bufferedReader()
-            var line = reader.readLine()
-
-
-            while (line != null) {
-                var Line = line.toString()
-                //val nextLine = Line.split(",").toTypedArray()
-                val nextLine: List<String> = Line.split(",")
-                //print(  nextLine)
-
-                listOfRest.add(
-                    Rest(
-                        nextLine.elementAt(0),
-                        nextLine.elementAt(1),
-                        nextLine.elementAt(2),
-                        nextLine.elementAt(3),
-                        nextLine.elementAt(4),
-                        nextLine.elementAt(5),
-                        nextLine.elementAt(6),
-                        0
-
-                    )
-                )
-                line = reader.readLine()
-            }
-        } catch (e: IllegalStateException) {
-            return listOfRest
-        }
-        return listOfRest
-    }
-/*
 
     class RecyclerViewAdapter(
 
@@ -139,7 +55,7 @@ class ListRest : Fragment() {
             init {
                 viewItem.setOnClickListener {
 
-                //val intent = Intent(viewItem.context, DetailRestFragment::class.java)
+                    //val intent = Intent(viewItem.context, DetailRestFragment::class.java)
                     //viewItem.context.startActivity(intent)
 
                 }
@@ -170,7 +86,3 @@ class ListRest : Fragment() {
              */
         }
     }
-
- */
-}
-

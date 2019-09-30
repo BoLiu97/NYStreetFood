@@ -5,16 +5,33 @@ import org.json.JSONArray
 import java.io.FileReader
 import java.io.IOException
 
-class Rest (
-    var restName:String?,
-    var subIndus: String?,
-    var subSub:String? ,
-    var address:String? ,
-    var phone:String?,
-    var website:String?,
-    var postcode:String?,
-    var rating:Int?
-){
+class Rest {
+    var restName: String? = null
+    var subIndus: String? = null
+    var subSub: String? = null
+    var address: String? = null
+    var phone: String? = null
+    var website: String? = null
+    var postcode: String? = null
+    var rating: Int? = 0
+
+
+
+    constructor(
+        restName:String, subIndus: String, subSub:String, address:String, phone:String,
+        website:String, postcode:String, rating:Int
+        ) {
+        this.restName = restName
+        this.subIndus = subIndus
+        this.subSub = subSub
+        this.address = address
+        this.phone = phone
+        this.website = website
+        this.postcode = postcode
+        this.rating = rating
+    }
+}
+/*
     companion object {
         fun readRestData(file:String):ArrayList<Rest>{
             var listOfRest = ArrayList<Rest>()
@@ -45,21 +62,10 @@ class Rest (
             return listOfRest
         }
     }
-}
+*/
 
-/*
 
-    constructor(restName:String,subIndus: String,subSub:String,address:String,phone:String,
-                website:String,postcode:String,rating:Int){
-        this.restName=restName
-        this.subIndus=subIndus
-        this.subSub=subSub
-        this.address=address
-        this.phone=phone
-        this.website=website
-        this.postcode=postcode
-        this.rating=rating
-    }
-}
 
- */
+
+
+
