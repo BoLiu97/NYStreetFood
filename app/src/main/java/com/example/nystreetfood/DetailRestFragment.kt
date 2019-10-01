@@ -42,11 +42,21 @@ class DetailRestFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).toolbar.title = "Restaurant Detail"
 
+
         val life = arguments?.getString("rest_name")
+        if(arguments?.getString("rest_post").equals("")){
+            TV_postcode.visibility = View.GONE
+        }else { view.findViewById<TextView>(R.id.TV_postcode).text=
+            "postcode:" + arguments?.getString("rest_post")}
+
         view.findViewById<TextView>(R.id.TV_name).text=
             arguments?.getString("rest_name")
+
+        if(arguments?.getString("rest_subSub").equals("")){
+            TV_style.visibility = View.GONE
+        }else {
         view.findViewById<TextView>(R.id.TV_style).text=
-            arguments?.getString("rest_subSub")
+            arguments?.getString("rest_subSub") + " Style"}
         view.findViewById<TextView>(R.id.TV_address).text=
             arguments?.getString("rest_add")
         view.findViewById<ImageView>(R.id.FV_food).setImageResource(

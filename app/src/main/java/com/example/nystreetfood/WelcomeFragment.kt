@@ -11,6 +11,9 @@ import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_welcome.*
 
+
+
+
 /**
  * A simple [Fragment] subclass.
  */
@@ -36,7 +39,56 @@ class WelcomeFragment : Fragment() {
             findNavController().navigate(R.id.action_welcomeFragment_to_foodScreenMainFragment)
         }
         LKdraw.setOnClickListener{
-            findNavController().navigate(R.id.action_welcomeFragment_to_detailRestFragment)
+            val bundle= Bundle();
+            val restData = readRestData()
+
+            bundle.putString("rest_name",restData[0].restName)
+            bundle.putString("rest_subInd",restData[0].subIndus)
+            bundle.putString("rest_subSub",restData[0].subSub)
+            bundle.putString("rest_add",restData[0].address)
+            bundle.putString("rest_phone",restData[0].phone)
+            bundle.putString("rest_web",restData[0].website)
+            bundle.putString("rest_post",restData[0].postcode)
+            bundle.putInt("rest_rate",restData[0].rating!!)
+
+            findNavController().navigate(R.id.action_welcomeFragment_to_detailRestFragment,bundle)
         }
     }
+    fun readRestData():ArrayList<Rest> {
+        var listOfRest = ArrayList<Rest>()
+        try {
+
+            var num = (1..332).random()
+            val initialRest = resources.openRawResource(R.raw.times_square_food_beverage_locations)
+            val reader = initialRest.bufferedReader()
+            var line = reader.readLine()
+            //var subin = arguments?.getString("subindu").toString()
+            for (i in 0 until num ) {
+                line = reader.readLine()
+            }
+                    var Line = line.toString()
+                    //val nextLine = Line.split(",").toTypedArray()
+                    val nextLine: List<String> = Line.split(",")
+                    //print(  nextLine)
+
+                        listOfRest.add(
+                            Rest(
+                                nextLine.elementAt(0),
+                                nextLine.elementAt(1),
+                                nextLine.elementAt(2),
+                                nextLine.elementAt(3),
+                                nextLine.elementAt(4),
+                                nextLine.elementAt(5),
+                                nextLine.elementAt(6),
+                                0
+
+                            )
+                        )
+        } catch (e: IllegalStateException) {
+            return listOfRest
+        }
+        return listOfRest
+    }
+
+
 }

@@ -74,9 +74,9 @@
         app:layout_constraintVertical_bias="0.708" />
 
     <TextView
-        android:id="@+id/Postcode"
-        android:layout_width="106dp"
-        android:layout_height="36dp"
+        android:id="@+id/TV_postcode"
+        android:layout_width="136dp"
+        android:layout_height="35dp"
         android:layout_marginTop="380dp"
         android:text="Posecode"
         app:layout_constraintEnd_toEndOf="parent"
