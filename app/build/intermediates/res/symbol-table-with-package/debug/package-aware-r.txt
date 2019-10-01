@@ -1109,6 +1109,7 @@ id action_bar_subtitle
 id action_bar_title
 id action_container
 id action_context_bar
+id action_detailRestFragment_self
 id action_divider
 id action_favourite
 id action_food
