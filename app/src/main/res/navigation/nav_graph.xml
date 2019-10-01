@@ -58,6 +58,21 @@
         <action
             android:id="@+id/action_savedRestMainFragment_to_detailRestFragment"
             app:destination="@id/detailRestFragment" />
+        <argument
+            android:name="5"
+            app:argType="string[]" />
+        <argument
+            android:name="4"
+            app:argType="string[]" />
+        <argument
+            android:name="3"
+            app:argType="string[]" />
+        <argument
+            android:name="2"
+            app:argType="string[]" />
+        <argument
+            android:name="1"
+            app:argType="string[]" />
     </fragment>
     <fragment
         android:id="@+id/detailRestFragment"
@@ -85,6 +100,9 @@
         <argument
             android:name="rest_rate"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_detailRestFragment_self"
+            app:destination="@id/detailRestFragment" />
     </fragment>
 
     <action

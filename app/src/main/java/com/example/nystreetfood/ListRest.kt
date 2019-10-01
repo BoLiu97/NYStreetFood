@@ -37,17 +37,7 @@ class ListRest : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_list_rest, container, false)
-        /*
-        var recyclerView = myFragmentView.findViewById(R.id.rest_list_recyclerView) as RecyclerView
 
-        val restData = readRestData()
-        recyclerView!!.layoutManager = LinearLayoutManager(this.context)
-        recyclerView!!.adapter= RecyclerViewAdapter(restData)
-
-
-        return myFragmentView
-
-         */
     }
 
 

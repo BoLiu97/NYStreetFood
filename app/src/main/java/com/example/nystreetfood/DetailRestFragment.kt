@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.view.isGone
 import androidx.core.view.isInvisible
+import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.StringBuilder
 import java.util.jar.Manifest as Manifest1
@@ -70,11 +71,7 @@ class DetailRestFragment : Fragment() {
             "Quick Serve"->R.mipmap.quickservice_banner
             else->R.mipmap.bar_banner
         })
-        /*
-        view.findViewById<RatingBar>(R.id.rating).numStars=
-            arguments?.getString("rest_rate")
 
-         */
         if(arguments?.getString("rest_web").equals("")){
             bt_website.visibility = View.GONE
         }else {
@@ -118,6 +115,17 @@ class DetailRestFragment : Fragment() {
             }
 
         }
+
+        val ratingBar = view.findViewById<RatingBar>(R.id.rating)
+        if(ratingBar != null){
+            val msg = ratingBar.rating.toString()
+            val bundle = Bundle()
+            bundle.putString(msg,arguments?.getString("rest_name"))
+            findNavController().navigate(R.id.action_detailRestFragment_self,bundle)
+        }
+
+
+
 
     }
 
