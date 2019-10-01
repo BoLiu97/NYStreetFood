@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #Mon Sep 30 21:05:32 EDT 2019
+=======
+#Mon Sep 30 19:39:14 EDT 2019
+>>>>>>> parent of eb875f4... only favourite part left
 base.0=/Users/bo/Desktop/CS 201/all_project/NYStreetFood/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+<<<<<<< HEAD
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_list_rest.*
+=======
+>>>>>>> parent of eb875f4... only favourite part left
 
 /**
  * A simple [Fragment] subclass.
@@ -28,6 +31,7 @@ class SavedRestMainFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_saved_rest_main, container, false)
     }
 
+<<<<<<< HEAD
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).toolbar.title = "Favourite"
@@ -104,6 +108,8 @@ class SavedRestMainFragment : Fragment() {
 
         }
     }
+=======
+>>>>>>> parent of eb875f4... only favourite part left
 
 
 }
